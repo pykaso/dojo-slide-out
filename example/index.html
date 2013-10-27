@@ -1,0 +1,53 @@
+
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Dojo Slide-out widget</title>
+		<link rel="stylesheet" href="./css/page.css">
+		<script src="http://ajax.googleapis.com/ajax/libs/dojo/1.9.1/dojo/dojo.js" data-dojo-config="async: true, packages: [{ name: 'pykaso', location: location.pathname.replace(/\/[^/]*$/, '') + '/../src/pykaso'}]"></script>
+		<script>
+			require(["pykaso/widget/SlideOutPanel","dojo/query","dojo/ready"], function(SlideOutPanel, query, ready){
+				ready(function(){
+					query('.slide-out').forEach(function(node, index, arr){
+						SlideOutPanel.init(node, {handler: 'handler', position: 'right'});
+					});
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<h1>SlideOutPanel</h1>
+		<div class="slide-out right">
+			<a class="handler" href="#">Ha<br/>nd<br/>le</a>
+			<div class="content">
+				<p>RIGHT Lorem ipsum dolor sit amet dolor sit amet. Ipsum dolor sit amet sit letr ar.Lorem ipsum dolor sit amet dolor sit amet. Ipsum dolor sit amet sit letr ar.Lorem ipsum dolor sit amet dolor sit amet. Ipsum dolor sit amet sit letr ar.</p>
+				<form method="post" action=""></form>
+			</div>
+		</div>
+
+		<div class="slide-out left open">
+			<a class="handler" href="#">Ha<br/>nd<br/>le</a>
+			<div class="content">
+				<p>LEFT Lorem ipsum dolor sit amet dolor sit amet. Ipsum dolor sit amet sit letr ar.Lorem ipsum dolor sit amet dolor sit amet. Ipsum dolor sit amet sit letr ar.Lorem ipsum dolor sit amet dolor sit amet. Ipsum dolor sit amet sit letr ar.</p>
+				<form method="post" action=""></form>
+			</div>
+		</div>
+
+		<div class="slide-out top">
+			<div class="content">
+				<p>LEFT Lorem ipsum dolor sit amet dolor sit amet. Ipsum dolor sit amet sit letr ar.Lorem ipsum dolor sit amet dolor sit amet. Ipsum dolor sit amet sit letr ar.Lorem ipsum dolor sit amet dolor sit amet. Ipsum dolor sit amet sit letr ar.</p>
+				<form method="post" action=""></form>
+			</div>
+			<a class="handler" href="#">Handle</a>
+		</div>
+
+		<div class="slide-out bottom">
+			<a class="handler" href="#">Handle</a>
+			<div class="content">
+				<p>LEFT Lorem ipsum dolor sit amet dolor sit amet. Ipsum dolor sit amet sit letr ar.Lorem ipsum dolor sit amet dolor sit amet. Ipsum dolor sit amet sit letr ar.Lorem ipsum dolor sit amet dolor sit amet. Ipsum dolor sit amet sit letr ar.</p>
+				<form method="post" action=""></form>
+			</div>
+		</div>
+	</body>
+</html>

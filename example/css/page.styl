@@ -1,0 +1,76 @@
+border-radius()
+  -webkit-border-radius arguments
+  -moz-border-radius arguments
+  border-radius arguments
+
+bg-color = #6DAD53
+
+body
+	height: 2000px
+
+.slide-out
+	position: fixed
+	width: 350px
+	text-align: center
+
+	.handler
+		background: bg-color
+		width: 50px
+		color: #fff
+		text-decoration: none;
+		display: inline-block;
+		padding: 5px;
+
+	.content
+		background: bg-color
+		text-align: left
+
+		p
+			margin: 0
+			padding: 1em
+	
+	&.left
+		top: 100px
+		left: -300px
+		&.open
+			left: 0
+		.handler
+			border-radius 0 5px 5px 0
+			float:right
+		.content
+			border-radius 0 0 5px 0
+			margin-right: 60px
+
+	&.right
+		top: 200px
+		right: -300px
+		&.open
+			right: 0
+		.handler
+			border-radius 5px 0 0 5px
+			float:left
+		.content
+			border-radius 0 0 0 5px
+			margin-left: 60px
+	
+	&.top
+		top: -140px
+		left: 400px
+		&.open
+			top: 0
+		.handler
+			border-radius 0 0 5px 5px
+		.content
+			border-radius 0 0 5px 5px
+			height: 140px;
+
+	&.bottom
+		bottom: -140px
+		left: 600px
+		&.open
+			bottom: 0
+		.handler
+			border-radius 5px 5px 0 0
+		.content
+			border-radius 5px 5px 0 0
+			height: 140px;
