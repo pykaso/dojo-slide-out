@@ -4,36 +4,32 @@ border-radius()
   border-radius arguments
 
 bg-color = #6DAD53
-
-body
-	height: 2000px
+color = #000
 
 .slide-out
 	position: fixed
 	width: 350px
 	text-align: center
+	z-index: 999
 
 	.handler
 		background: bg-color
-		width: 50px
 		color: #fff
 		text-decoration: none;
 		display: inline-block;
-		padding: 5px;
+		padding: 10px;
 
 	.content
 		background: bg-color
 		text-align: left
-
+		color: color
 		p
 			margin: 0
 			padding: 1em
 	
 	&.left
 		top: 100px
-		left: -300px
-		&.open
-			left: 0
+		left: 0
 		.handler
 			border-radius 0 5px 5px 0
 			float:right
@@ -43,9 +39,7 @@ body
 
 	&.right
 		top: 200px
-		right: -300px
-		&.open
-			right: 0
+		right: 0
 		.handler
 			border-radius 5px 0 0 5px
 			float:left
@@ -54,10 +48,8 @@ body
 			margin-left: 60px
 	
 	&.top
-		top: -140px
 		left: 400px
-		&.open
-			top: 0
+		top: 0
 		.handler
 			border-radius 0 0 5px 5px
 		.content
@@ -65,10 +57,8 @@ body
 			height: 140px;
 
 	&.bottom
-		bottom: -140px
 		left: 600px
-		&.open
-			bottom: 0
+		bottom: 0
 		.handler
 			border-radius 5px 5px 0 0
 		.content
