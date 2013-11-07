@@ -7,12 +7,57 @@
 
     <link rel="stylesheet" href="stylesheets/styles.css">
     <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <link rel="stylesheet" href="stylesheets/page.css">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
+    <script src="http://ajax.googleapis.com/ajax/libs/dojo/1.9.1/dojo/dojo.js" data-dojo-config="async: true, packages: [{ name: 'pykaso', location: location.pathname.replace(/\/[^/]*$/, '') + '/javascripts/pykaso'}]"></script>
+    <script>
+      require(["pykaso/widget/SlideOutPanel","dojo/query","dojo/ready"], function(SlideOutPanel, query, ready){
+        ready(function(){
+          query('.slide-out').forEach(function(node, index, arr){
+            SlideOutPanel.init(node, {handler: 'handler', position: 'right'});
+          });
+        });
+      });
+    </script>    
   </head>
   <body>
+    <!-- slide-out-example start -->
+    <div class="slide-out right open">
+      <a class="handler" href="#">Ha<br/>nd<br/>le</a>
+      <div class="content">
+        <p>RIGHT Lorem ipsum dolor sit amet dolor sit amet. Ipsum dolor sit amet sit letr ar.Lorem ipsum dolor sit amet dolor sit amet. Ipsum dolor sit amet sit letr ar.Lorem ipsum dolor sit amet dolor sit amet. Ipsum dolor sit amet sit letr ar.</p>
+        <form method="post" action=""></form>
+      </div>
+    </div>
+
+    <div class="slide-out left">
+      <a class="handler" href="#">L<br/>E<br/>F<br/>T</a>
+      <div class="content">
+        <p>LEFT Lorem ipsum dolor sit amet dolor sit amet. Ipsum dolor sit amet sit letr ar.Lorem ipsum dolor sit amet dolor sit amet. Ipsum dolor sit amet sit letr ar.Lorem ipsum dolor sit amet dolor sit amet. Ipsum dolor sit amet sit letr ar.</p>
+        <form method="post" action=""></form>
+      </div>
+    </div>
+
+    <div class="slide-out top">
+      <div class="content">
+        <p>LEFT Lorem ipsum dolor sit amet dolor sit amet. Ipsum dolor sit amet sit letr ar.Lorem ipsum dolor sit amet dolor sit amet. Ipsum dolor sit amet sit letr ar.Lorem ipsum dolor sit amet dolor sit amet. Ipsum dolor sit amet sit letr ar.</p>
+        <form method="post" action=""></form>
+      </div>
+      <a class="handler" href="#">Example top</a>
+    </div>
+
+    <div class="slide-out bottom">
+      <a class="handler" href="#">Example bottom</a>
+      <div class="content">
+        <p>LEFT Lorem ipsum dolor sit amet dolor sit amet. Ipsum dolor sit amet sit letr ar.Lorem ipsum dolor sit amet dolor sit amet. Ipsum dolor sit amet sit letr ar.Lorem ipsum dolor sit amet dolor sit amet. Ipsum dolor sit amet sit letr ar.</p>
+        <form method="post" action=""></form>
+      </div>
+    </div>
+    <!-- slide-out-example end -->
+
     <div class="wrapper">
       <header>
         <h1>Dojo-slide-out</h1>
